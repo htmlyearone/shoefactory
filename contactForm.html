@@ -1,0 +1,184 @@
+<html>
+<head><title>Contact Us</title>
+<link rel="stylesheet" type="text/css" href="css/contactForm.css">
+<script language="JavaScript">
+<!--
+ function nameDefined(ckie,nme)
+{
+   var splitValues
+   var i
+   for (i=0;i<ckie.length;++i)
+   {
+      splitValues=ckie[i].split("=")
+      if (splitValues[0]==nme) return true
+   }
+   return false
+}
+
+function delBlanks(strng)
+{
+   var result=""
+   var i
+   var chrn
+   for (i=0;i<strng.length;++i) {
+      chrn=strng.charAt(i)
+      if (chrn!=" ") result += chrn
+   }
+   return result
+}
+function getCookieValue(ckie,nme)
+{
+   var splitValues
+   var i
+   for(i=0;i<ckie.length;++i) {
+      splitValues=ckie[i].split("=")
+      if(splitValues[0]==nme) return splitValues[1]
+   }
+   return ""
+}
+function insertCounter() {
+ readCookie()
+ displayCounter()
+}
+ function displayCounter() {
+ document.write('<H3 ALIGN="CENTER">')
+ document.write("You've visited this page ")
+ if(counter==1) document.write("the first time.")
+ else document.write(counter+" times.")
+ document.writeln('</H3>')
+ }
+function readCookie() {
+ var cookie=document.cookie
+ counter=0
+ var chkdCookie=delBlanks(cookie)  //are on the client computer
+ var nvpair=chkdCookie.split(";")
+ if(nameDefined(nvpair,"pageCount"))
+ counter=parseInt(getCookieValue(nvpair,"pageCount"))
+ ++counter
+ var futdate = new Date()
+ var expdate = futdate.getTime()
+ expdate += 3600000 * 24 *30  //expires in 1 hour
+ futdate.setTime(expdate)
+
+ var newCookie="pageCount="+counter
+ newCookie += "; expires=" + futdate.toGMTString()
+ window.document.cookie=newCookie
+}
+// -->
+</script>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["Name"].value;
+    if (x == null || x == "") {
+        alert("First name must be filled out");
+       }
+
+
+
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        
+    }
+
+    var x = document.forms["myForm"]["Message"].value;
+    if (x == null || x == "") {
+        alert("You must include a message before sending");
+        return false;
+    }
+}
+</script>
+</head>
+<body  background="images/hip.jpg">
+
+<div id="main">
+	<div id="header"> <img id="logo" src="images/logo.jpg">
+		<ul>
+				<li><a href="index.html"><img id="ti" src="images/home.png" alt="Home" /></a></li>
+                <li><a href="about.html"><img id="ti" src="images/about.png" alt="About Us" /></a></li>
+				<li><a href="onSale.html"><img id="ti" src="images/sale.png" alt="On Sale" /></a></li>
+                <li><a href="Products.html"><img id="ti" src="images/products.png" alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img id="ti"src="images/contact.png" alt="Contact Us" /></a></li>
+			</ul>
+
+
+	</div>
+	
+	<div id="body">content
+
+		 <div class="boxed">
+		 <img id="welcome" src="images/welcome4.jpg" alt="shoe">
+		 	<script language="JavaScript">
+<!--
+insertCounter()
+// -->
+</script>
+		 <h1> Contact Us <h1>
+		 <h2> Please fill in the form below and we will answer your questions or queries as fast as we possibly can. Thank you for your co-operation</h2>
+  
+ <form name="myForm" action="contactForm.html" onsubmit="return validateForm();" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="Name" id="name" />
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" name="email" id="mail" />
+    </div>
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg"></textarea>
+    </div>
+	<div class="button">
+ <button> Send! </button>
+    </div>
+</form>
+<div>
+<h2>
+COMPANY INFO
+<br>
+
+
+Ireland
+<br>
+Cork Office: 0800 1234567
+Dublin office: 0800 7654321
+<br>
+Email address: questions@theshoefactory.com
+<br>
+Customer Service Desk: 0800 331 6078
+</h2>
+</div>
+	<div id="footer" id="footer">
+	<ul>         
+	<br>
+				<li><a href="terms.html"><img alt="terms of service" /></a></li>
+                <li><a href="about.html"><img alt="About Us" /></a></li>
+				<li><a href="privacypolicy.html"><img alt="privacy policy" /></a></li>
+                <li><a href="Products.html"><img alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img alt="Contact Us" /></a></li>
+			</ul>
+			<div>
+						<script>
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var d = new Date();
+var weekDay = days[d.getDay()];
+var month = months[d.getMonth()];
+var day = d.getDate();
+
+var suffix = 'th';
+if (day == 1) suffix = 'st';
+else if (day == 2) suffix = 'nd';
+else if (day == 3) suffix = 'rd';
+document.write(weekDay+', '+month+' '+day+suffix);
+
+
+</script>
+</div>
+	</div>
+
+</body>
+</html>

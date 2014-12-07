@@ -1,0 +1,184 @@
+<html>
+<head><title>The Shoe Factory</title>
+<!--link with css-->
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script language="JavaScript">
+<!--start javascript for page counter-->
+ function nameDefined(ckie,nme)
+{
+   var splitValues
+   var i
+   for (i=0;i<ckie.length;++i)
+   {
+      splitValues=ckie[i].split("=")
+      if (splitValues[0]==nme) return true
+   }
+   return false
+}
+
+function delBlanks(strng)
+{
+   var result=""
+   var i
+   var chrn
+   for (i=0;i<strng.length;++i) {
+      chrn=strng.charAt(i)
+      if (chrn!=" ") result += chrn
+   }
+   return result
+}
+function getCookieValue(ckie,nme)
+{
+   var splitValues
+   var i
+   for(i=0;i<ckie.length;++i) {
+      splitValues=ckie[i].split("=")
+      if(splitValues[0]==nme) return splitValues[1]
+   }
+   return ""
+}
+function insertCounter() {
+ readCookie()
+ displayCounter()
+}
+ function displayCounter() {
+ document.write('<H3 ALIGN="CENTER">')
+ document.write("You've visited this page ")
+ if(counter==1) document.write("for the first time, welcome.")
+ else document.write(counter+" times.")
+ document.writeln('</H3>')
+ }
+function readCookie() {
+ var cookie=document.cookie
+ counter=0
+ var chkdCookie=delBlanks(cookie)  //are on the client computer
+ var nvpair=chkdCookie.split(";")
+ if(nameDefined(nvpair,"pageCount"))
+ counter=parseInt(getCookieValue(nvpair,"pageCount"))
+ ++counter
+ var futdate = new Date()
+ var expdate = futdate.getTime()
+ expdate += 3600000 * 24 *30  //expires in 1 hour
+ futdate.setTime(expdate)
+
+ var newCookie="pageCount="+counter
+ newCookie += "; expires=" + futdate.toGMTString()
+ window.document.cookie=newCookie
+}
+// -->
+</script>
+</head>
+<body  background="images/hip.jpg">
+
+<div id="main">   
+
+	<div id="header"> <img id="logo" src="images/logo.jpg">
+		<ul
+		<!--page links--> 
+				<li><a href="index.html"><img id="ti" src="images/home.png" alt="Home" /></a></li>
+                <li><a href="about.html"><img id="ti" src="images/about.png" alt="About Us" /></a></li>
+				<li><a href="onSale.html"><img id="ti" src="images/sale.png" alt="On Sale" /></a></li>
+                <li><a href="Products.html"><img id="ti" src="images/products.png" alt="Products" />
+</a></li>
+                <li><a href="contactForm.html"><img id="ti"src="images/contact.png" alt="Contact Us" />
+</a></li>
+			</ul>
+
+
+	</div>
+	
+	<div id="body">content
+		 <div class="boxed">
+		 <img id="welcome" src="images/welcome4.jpg" alt="shoe">
+  
+</div>
+			<script language="JavaScript">
+<!--
+insertCounter()
+// -->
+</script>
+<!--start of page content-->
+<div id="arrivals">
+<h1> <b> This Weeks Arrivals. <b> </h1>
+<h2> Straight to the point designer shoes at a reasonable price. <h2>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes1.jpg" alt="shoe">
+$50.00  <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes2.jpg" alt="shoe">
+ $45.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes3.jpg" alt="shoe">
+  $55.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes4.jpg" alt="shoe">
+ $60.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+ <img id="image" src="images/menshoes5.jpg" alt="shoe">
+$40.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes6.jpg" alt="shoe">
+ $70.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes7.jpg" alt="shoe">
+ $65.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+<img id="image" src="images/menshoes8.jpg" alt="shoe">
+$60.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+ <img id="image" src="images/menshoes9.jpg" alt="shoe">
+$35.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+<div class="box">
+  <img id="image" src="images/menshoes10.jpg" alt="shoe">
+$40.00 <a href="paymentForm.html"><img id="buynow" src="images/buy.png" alt="Buy now" /></a>
+</div>
+
+<!--end-->
+	</div>
+
+	
+	<div id="footer" id="footer">
+	<ul>         
+	<br>
+	<!--footer links-->
+				<li><a href="terms.html"><img alt="terms of service" /></a></li>
+                <li><a href="about.html"><img alt="About Us" /></a></li>
+				<li><a href="privacypolicy.html"><img alt="privacy policy" /></a></li>
+                <li><a href="Products.html"><img alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img alt="Contact Us" /></a></li>
+			</ul>
+	</div>
+	<div>
+						<script>
+						<!--script for getting time and day-->
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+var months = new Array('January','February','March','April','May','June','July','August','September',
+'October','November','December');
+var d = new Date();
+var weekDay = days[d.getDay()];
+var month = months[d.getMonth()];
+var day = d.getDate();
+
+var suffix = 'th';
+if (day == 1) suffix = 'st';
+else if (day == 2) suffix = 'nd';
+else if (day == 3) suffix = 'rd';
+document.write(weekDay+', '+month+' '+day+suffix);
+
+
+</script>
+</div>
+</div>
+
+</body>
+</html>

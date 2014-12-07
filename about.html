@@ -1,0 +1,157 @@
+<html>
+<head><title>About Us</title>
+<!--link with css-->
+<link rel="stylesheet" type="text/css" href="css/about us.css">
+<!--start javascript for page counter-->
+ <script language="JavaScript">
+
+ function nameDefined(ckie,nme)
+{
+   var splitValues
+   var i
+   for (i=0;i<ckie.length;++i)
+   {
+      splitValues=ckie[i].split("=")
+      if (splitValues[0]==nme) return true
+   }
+   return false
+}
+
+function delBlanks(strng)
+{
+   var result=""
+   var i
+   var chrn
+   for (i=0;i<strng.length;++i) {
+      chrn=strng.charAt(i)
+      if (chrn!=" ") result += chrn
+   }
+   return result
+}
+function getCookieValue(ckie,nme)
+{
+   var splitValues
+   var i
+   for(i=0;i<ckie.length;++i) {
+      splitValues=ckie[i].split("=")
+      if(splitValues[0]==nme) return splitValues[1]
+   }
+   return ""
+}
+function insertCounter() {
+ readCookie()
+ displayCounter()
+}
+ function displayCounter() {
+ document.write('<H3 ALIGN="CENTER">')
+ document.write("You've visited this page ")
+ if(counter==1) document.write("the first time.")
+ else document.write(counter+" times.")
+ document.writeln('</H3>')
+ }
+function readCookie() {
+ var cookie=document.cookie
+ counter=0
+ var chkdCookie=delBlanks(cookie)  //are on the client computer
+ var nvpair=chkdCookie.split(";")
+ if(nameDefined(nvpair,"pageCount"))
+ counter=parseInt(getCookieValue(nvpair,"pageCount"))
+ ++counter
+ var futdate = new Date()
+ var expdate = futdate.getTime()
+ expdate += 3600000 * 24 *30  //expires in 1 hour
+ futdate.setTime(expdate)
+
+ var newCookie="pageCount="+counter
+ newCookie += "; expires=" + futdate.toGMTString()
+ window.document.cookie=newCookie
+}
+// -->
+</script>
+ 
+</head>
+<body  background="images/hip.jpg">
+
+<div id="main">
+	<div id="header"> <img id="logo" src="images/logo.jpg">
+		<ul>
+		<!--page links--> 
+				<li><a href="index.html"><img id="ti" src="images/home.png" alt="Home" /></a></li>
+                <li><a href="about.html"><img id="ti" src="images/about.png" alt="About Us" /></a></li>
+				<li><a href="onSale.html"><img id="ti" src="images/sale.png" alt="On Sale" /></a></li>
+                <li><a href="Products.html"><img id="ti" src="images/products.png" alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img id="ti"src="images/contact.png" alt="Contact Us" /></a></li>
+			</ul>
+
+	</div>
+	<div id="body">content
+		 <div class="boxed">
+		 <img id="welcome" src="images/welcome4.jpg" alt="shoe">
+  
+</div>
+<script language="JavaScript">
+<!--
+insertCounter()
+// -->
+</script>
+<!--start of page content-->
+<div> <h1> About Us: The World Wide Story</h1>
+<p> The Shoe Factory was established in 2012. Since then we have become one of the most successful shoe shop in Ireland. We started in a small store in cork ad have in just 2 years we have spread across the country with 36 stores nationwide.</p>
+<p> we have a low staff turnover and we were nominated for the best place to work 2013. We deliver the best made shoes to our customers, hand made in Italy and France with only the finest materials. We hope to continue to give the excellent customer service and excellent shoes to our customers on a day to day basis.</p>
+<p> Our newest home is on Grafton Street in Dublin City Centre. The newly renovated store is perfect and fits all of our needs and hopefully the needs of our customers.we have just signed an exclusive contract to sell the word famous Andrefus range of shoes. The first store to receive these shoes will be our new home on Grafton street.</p>
+<br>
+<br>
+</div>
+<div>
+<h2>COMPANY INFO
+<br>
+
+
+Ireland
+<br>
+Cork Office: 0800 1234567
+<br>
+Dublin office: 0800 7654321
+<br>
+Email address: questions@theshoefactory.com
+<br>
+Customer Service Desk: 0800 331 6078</h2>
+
+</div>
+ 
+ <div><h2> If these methods do not suit you, drop in anytime between 9am-5pm Monday/Sunday.</h2>
+</div>
+<!--end-->
+	<div id="footer" id="footer">
+	<ul>         
+	<br>
+	<!--footer links-->
+				<li><a href="terms.html"><img alt="terms of service" /></a></li>
+                <li><a href="about.html"><img alt="About Us" /></a></li>
+				<li><a href="privacypolicy.html"><img alt="privacy policy" /></a></li>
+                <li><a href="Products.html"><img alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img alt="Contact Us" /></a></li>
+			</ul>
+			<div>
+						<script>
+						<!--script for getting time and day-->
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var d = new Date();
+var weekDay = days[d.getDay()];
+var month = months[d.getMonth()];
+var day = d.getDate();
+
+var suffix = 'th';
+if (day == 1) suffix = 'st';
+else if (day == 2) suffix = 'nd';
+else if (day == 3) suffix = 'rd';
+document.write(weekDay+', '+month+' '+day+suffix);
+
+
+</script>
+</div>
+	</div>
+
+</body>
+</html>

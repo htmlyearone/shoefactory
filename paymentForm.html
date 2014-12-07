@@ -1,0 +1,106 @@
+<html>
+<head><title>Payment</title>
+<link rel="stylesheet" type="text/css" href="css/paymentForm.css">
+<script>
+function validateForm() 
+    {
+    var x = document.forms["payment"]["cardno"].value;
+    if (x === null || x === "") {
+        alert("You must include your credit card number.");
+       }
+    var y = document.forms["payment"]["CVC"].value;
+    if (y === null || y === "") {
+        alert("You must include your CVC number. It is the three digit number on the back of your card.");
+       }
+    var z = document.forms["payment"]["name"].value;
+    if (z === null || z === "") {
+        alert("Please enter the cardholders name.");
+       }
+    var w = document.forms["payment"]["expiry"].value;
+    if (w === null || w === "") {
+        alert("Please enter the expiry date of your credit card.");
+		return false;
+       }
+	   return true;
+	}
+ </script>
+</head>
+<body  background="images/hip.jpg">
+
+<div id="main">
+	<div id="header"> <img id="logo" src="images/logo.jpg">
+		<ul>
+				<li><a href="index.html"><img id="ti" src="images/home.png" alt="Home" /></a></li>
+                <li><a href="about.html"><img id="ti" src="images/about.png" alt="About Us" /></a></li>
+				<li><a href="onSale.html"><img id="ti" src="images/sale.png" alt="On Sale" /></a></li>
+                <li><a href="Products.html"><img id="ti" src="images/products.png" alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img id="ti"src="images/contact.png" alt="Contact Us" /></a></li>
+			</ul>
+
+	</div>
+	<div id="body">content
+		 <div class="boxed">
+		 <img id="welcome" src="images/welcome4.jpg" alt="shoe">
+  
+</div>
+<div>
+<h2> To finalise your purchase you first must enter your credit card details </h2>
+</div>
+<div>
+<form name="payment" action="thank.html" onsubmit="return validateForm();" method="post">
+
+  <div for="cardno"<label>Card number</label>
+    <input type="text" name="cardno" size="20" /></div>
+<br>
+  <div for="CVC" <label>CVC</label>
+    <input  type="text" name="CVC" size="4" /></div>
+<br>
+  <div for="name"<label>Name</label>
+    <input  type="text" name="name" size="4" /></div>
+<br>
+  <div for="expiry" <label>Expiry date (MM/YYYY)</label>
+    <input  type="text" name="expiry" size="2" />
+    <span></span>
+    <input type="text" size="4" /></div>
+	<br>
+	<h2> please tick the box of your preferred way to get your shoes </h2>
+<br>	
+ <input type="checkbox" name="type" value="collection"> I would like it delivered to my home.<br>
+  <input type="checkbox" name="type" value="collection"> I would like to collect it in store.<br>
+<br>
+  <button class="submit-button" type="submit">Submit</button>
+
+</form>
+</div>
+
+	<div id="footer" id="footer">
+	<ul>         
+	<br>
+				<li><a href="terms.html"><img alt="terms of service" /></a></li>
+                <li><a href="about.html"><img alt="About Us" /></a></li>
+				<li><a href="privacypolicy.html"><img alt="privacy policy" /></a></li>
+                <li><a href="Products.html"><img alt="Products" /></a></li>
+                <li><a href="contactForm.html"><img alt="Contact Us" /></a></li>
+			</ul>
+			<div>
+						<script>
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var d = new Date();
+var weekDay = days[d.getDay()];
+var month = months[d.getMonth()];
+var day = d.getDate();
+
+var suffix = 'th';
+if (day == 1) suffix = 'st';
+else if (day == 2) suffix = 'nd';
+else if (day == 3) suffix = 'rd';
+document.write(weekDay+', '+month+' '+day+suffix);
+
+
+</script>
+</div>
+	</div>
+
+</body>
+</html>
